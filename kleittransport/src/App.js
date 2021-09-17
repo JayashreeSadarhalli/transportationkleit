@@ -1,17 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-import Form from './components/Form';
-import Navbar from './components/Navbar';
-import Display from './components/Display';
+import "./App.css";
+import Form from "./components/Form";
+import Navbar from "./components/Navbar";
+import Display from "./components/Display";
+import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 
-function App() {
+function App(props) {
   return (
     <>
-    <Navbar/>
-    <Form/>
-    <div className="container">
-      <Display/>
-    </div>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/" component={Form}></Route>
+          <Route exact path="/display" component={Display}></Route>
+        </Switch>
+      </Router>
     </>
   );
 }
