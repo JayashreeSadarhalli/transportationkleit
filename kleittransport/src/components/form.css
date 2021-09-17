@@ -1,0 +1,43 @@
+.container.my-4{
+    max-width: 400px;
+    font-family: 'Poppins',sans-serif;
+    background-color: aliceblue;
+    box-shadow: 0 0 20px #284666;
+    border-radius: 20px
+}
+
+.form-group{
+    border: none;
+}
+
+legend{
+    font-weight: bold;
+}
+
+.formcontrol{
+    display: block;
+    width: 100%;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: #104190;
+    background-color: rgba(255, 255, 255, 0);
+    background-clip: padding-box;
+    border: none;
+    border-bottom: 2px solid #1b4672;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+}
+
+
+input:focus{
+    border: 0px #1b4672 solid;
+    box-shadow: #1b4672 0px 0px 15px 0px;
+
+    outline: none;
+}
