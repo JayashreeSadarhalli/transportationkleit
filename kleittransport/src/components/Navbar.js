@@ -1,5 +1,10 @@
 import React from 'react'
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 export default function Navbar() {
     return (
         <div>
@@ -17,6 +22,9 @@ export default function Navbar() {
         </li>
         <li className="nav-item">
           <a className="nav-link" href="/">Bus Schedule</a>
+        </li>
+        <li className="nav-item">
+           <Link className="nav-link" to="/display">Display</Link>
         </li>
         <li className="nav-item dropdown">
           <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">

@@ -1,8 +1,12 @@
 import React from "react";
 import "./form.css";
 import { useState } from "react";
-import Display from "./Display";
-
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 export default function Form() {
   const [details, setdetails] = useState({
     modelNo: "",
@@ -157,13 +161,16 @@ export default function Form() {
             </div>
 
             <button onClick={submit} className="btn btn-primary">
-              Submit
+              <Link className="btn btn-primary" to={{
+                pathname: "/display",
+                props : {details}
+              }}>Submit</Link>
             </button>
           </fieldset>
         </form>
       </div>
       <div className="container">
-        <Display
+        {/***  <Display
           modelNo={display.modelNo}
           vehicleName={display.vehicleName}
           purchaseDate={display.purchaseDate}
@@ -172,7 +179,7 @@ export default function Form() {
           service={display.service}
           kilometre={display.kilometre}
           latestKm={display.latestKm}
-        />
+       />***/}
       </div>
     </>
   );
