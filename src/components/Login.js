@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 export default function Login() {
   const [state, setstate] = useState({
     name: "",
     userid: "",
-    phone: "",
+    password: "",
   })
 
   const myInit = {
@@ -17,12 +18,12 @@ export default function Login() {
 
     let name = event.target.name
     let value = event.target.value
-    console.log(value)
+    
 
     setstate({ ...state, [name]: value })
   }
   const [values, setvalues] = useState({})
-  const [res, setres] = useState("")
+  
   const fetchData = async () => {
     const response = await fetch('https://transportkleit.herokuapp.com/login',
       {
@@ -30,7 +31,7 @@ export default function Login() {
         headers: {
           'Content-Type': 'application/json'
         },
-        body: JSON.stringify({ 'name': state.name, 'userid': state.userid, 'phone': state.phone })
+        body: JSON.stringify({ 'name': state.name, 'userid': state.userid, 'password': state.password })
       })
     const data = await response.json()
     alert(data.response)
@@ -75,19 +76,22 @@ export default function Login() {
               <div className="mb-3">
                 <input
                   onChange={onchange}
-                  type="number"
+                  type="password"
                   className="formcontrol"
                   id="exampleInputEmail1"
                   aria-describedby="emailHelp"
-                  name="phone"
-                  placeholder="Phone:"
+                  name="password"
+                  placeholder="Password:"
                 />
               </div>
 
               <button className="btn btn-primary" onClick={submit}>Submit</button>
-              <p className="my-2"><a href="" style={{
+              <p className="my-2">
+              <Link to="/Form">
+                <a href="" style={{
                 color: "#325282"
-              }}>Register Here</a> If account not available</p>
+              }}>Register Here</a>
+              </Link> If account not available</p>
             </fieldset>
           </form>
         </div>
