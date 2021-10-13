@@ -4,6 +4,7 @@ import Form from "./components/Form";
 import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
 import Login from "./components/Login";
+import Askuser from "./components/Askuser";
 
 function App() {
 
@@ -13,7 +14,9 @@ function App() {
     <>
     <Router>
     
-    <Route exact path="/" component={Login}></Route>
+    <Route exact path="/" component={Askuser}></Route>
+    <Route exact path="/Login" component={Login}></Route>
+
     <Route exact path="/Form" component={Form}></Route>
 
 

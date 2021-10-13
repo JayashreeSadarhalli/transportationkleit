@@ -88,8 +88,10 @@ export default function Login() {
               <button className="btn btn-primary" onClick={submit}>Submit</button>
               <p className="my-2">
               <Link to="/Form">
-                <a href="" style={{
-                color: "#325282"
+                <a href="/" style={{
+                color: "#325282",
+                fontWeight:"bold",
+                textDecorationLine:"none"
               }}>Register Here</a>
               </Link> If account not available</p>
             </fieldset>
